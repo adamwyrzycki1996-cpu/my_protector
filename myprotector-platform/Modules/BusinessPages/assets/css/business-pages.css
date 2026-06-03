@@ -1,0 +1,714 @@
+/**
+ * MyProtector Platform - Business Pages Styles
+ * 
+ * @package MyProtector\Modules\BusinessPages
+ */
+
+/* ============================================
+   CSS Variables
+   ============================================ */
+:root {
+    --mp-primary: #2563eb;
+    --mp-primary-dark: #1d4ed8;
+    --mp-success: #10b981;
+    --mp-warning: #f59e0b;
+    --mp-danger: #ef4444;
+    --mp-gray-50: #f9fafb;
+    --mp-gray-100: #f3f4f6;
+    --mp-gray-200: #e5e7eb;
+    --mp-gray-300: #d1d5db;
+    --mp-gray-400: #9ca3af;
+    --mp-gray-500: #6b7280;
+    --mp-gray-600: #4b5563;
+    --mp-gray-700: #374151;
+    --mp-gray-800: #1f2937;
+    --mp-gray-900: #111827;
+    --mp-radius: 8px;
+    --mp-radius-lg: 12px;
+    --mp-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+    --mp-shadow-lg: 0 10px 25px rgba(0, 0, 0, 0.1);
+    --mp-transition: all 0.2s ease;
+}
+
+/* ============================================
+   Business Page Container
+   ============================================ */
+.mp-business-page {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, sans-serif;
+    color: var(--mp-gray-700);
+    line-height: 1.6;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.mp-business-page * {
+    box-sizing: border-box;
+}
+
+/* ============================================
+   Trust Banner
+   ============================================ */
+.mp-trust-banner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 16px 24px;
+    border-radius: var(--mp-radius-lg);
+    margin-bottom: 32px;
+}
+
+.mp-trust-banner-walking {
+    background: linear-gradient(135deg, #d1fae5, #a7f3d0);
+    border: 2px solid var(--mp-success);
+}
+
+.mp-trust-banner-shopping {
+    background: linear-gradient(135deg, #fef3c7, #fde68a);
+    border: 2px solid var(--mp-warning);
+}
+
+.mp-trust-banner-bad {
+    background: linear-gradient(135deg, #fee2e2, #fecaca);
+    border: 2px solid var(--mp-danger);
+}
+
+.mp-trust-signal {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.mp-trust-icon {
+    font-size: 32px;
+}
+
+.mp-trust-label {
+    font-size: 20px;
+    font-weight: 700;
+    color: var(--mp-gray-800);
+}
+
+.mp-trust-score {
+    font-size: 16px;
+    color: var(--mp-gray-600);
+}
+
+.mp-trust-learn-more {
+    color: var(--mp-primary);
+    text-decoration: none;
+    font-weight: 600;
+    transition: var(--mp-transition);
+}
+
+.mp-trust-learn-more:hover {
+    text-decoration: underline;
+}
+
+/* ============================================
+   Business Header
+   ============================================ */
+.mp-business-header {
+    display: flex;
+    gap: 24px;
+    margin-bottom: 32px;
+    padding-bottom: 32px;
+    border-bottom: 1px solid var(--mp-gray-200);
+}
+
+.mp-business-logo {
+    flex-shrink: 0;
+    width: 120px;
+    height: 120px;
+    border-radius: var(--mp-radius);
+    overflow: hidden;
+    background: var(--mp-gray-100);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.mp-business-logo img {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+}
+
+.mp-business-info {
+    flex: 1;
+}
+
+.mp-business-name {
+    font-size: 32px;
+    font-weight: 700;
+    color: var(--mp-gray-900);
+    margin: 0 0 8px 0;
+}
+
+.mp-business-tagline {
+    font-size: 18px;
+    color: var(--mp-gray-600);
+    margin: 0 0 16px 0;
+}
+
+/* Rating Summary */
+.mp-rating-summary {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 20px;
+}
+
+.mp-rating-value {
+    font-size: 24px;
+    font-weight: 700;
+    color: var(--mp-gray-900);
+}
+
+.mp-review-count {
+    font-size: 16px;
+    color: var(--mp-gray-500);
+}
+
+/* Business Actions */
+.mp-business-actions {
+    display: flex;
+    gap: 12px;
+}
+
+.mp-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 12px 24px;
+    border-radius: var(--mp-radius);
+    font-size: 16px;
+    font-weight: 600;
+    text-decoration: none;
+    cursor: pointer;
+    transition: var(--mp-transition);
+    border: none;
+}
+
+.mp-btn-primary {
+    background: var(--mp-primary);
+    color: white;
+}
+
+.mp-btn-primary:hover {
+    background: var(--mp-primary-dark);
+}
+
+.mp-btn-outline {
+    background: transparent;
+    color: var(--mp-primary);
+    border: 2px solid var(--mp-primary);
+}
+
+.mp-btn-outline:hover {
+    background: var(--mp-primary);
+    color: white;
+}
+
+/* ============================================
+   Star Ratings
+   ============================================ */
+.mp-star-rating {
+    display: flex;
+    gap: 4px;
+}
+
+.mp-stars {
+    display: flex;
+    gap: 2px;
+    color: #f59e0b;
+}
+
+.mp-stars i {
+    color: #f59e0b;
+}
+
+.mp-stars .mp-star-large {
+    font-size: 20px;
+}
+
+/* ============================================
+   Rating Distribution
+   ============================================ */
+.mp-rating-distribution {
+    margin-bottom: 32px;
+    padding: 24px;
+    background: var(--mp-gray-50);
+    border-radius: var(--mp-radius-lg);
+}
+
+.mp-rating-distribution h3 {
+    margin: 0 0 16px 0;
+    font-size: 18px;
+    color: var(--mp-gray-800);
+}
+
+.mp-distribution-bars {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.mp-distribution-row {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.mp-distribution-stars {
+    width: 60px;
+    font-size: 14px;
+    color: var(--mp-gray-600);
+}
+
+.mp-distribution-bar-container {
+    flex: 1;
+    height: 8px;
+    background: var(--mp-gray-200);
+    border-radius: 4px;
+    overflow: hidden;
+}
+
+.mp-distribution-bar {
+    height: 100%;
+    background: #f59e0b;
+    transition: width 0.3s ease;
+}
+
+.mp-distribution-count {
+    width: 40px;
+    text-align: right;
+    font-size: 14px;
+    color: var(--mp-gray-600);
+}
+
+/* ============================================
+   Reviews List
+   ============================================ */
+.mp-latest-reviews {
+    margin-bottom: 32px;
+}
+
+.mp-latest-reviews h3 {
+    margin: 0 0 16px 0;
+    font-size: 20px;
+    color: var(--mp-gray-800);
+}
+
+.mp-reviews-list {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.mp-review-item {
+    padding: 20px;
+    background: white;
+    border: 1px solid var(--mp-gray-200);
+    border-radius: var(--mp-radius-lg);
+    transition: var(--mp-transition);
+}
+
+.mp-review-item:hover {
+    box-shadow: var(--mp-shadow);
+}
+
+.mp-review-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 12px;
+}
+
+.mp-review-author {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.mp-review-avatar {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.mp-review-author-info {
+    display: flex;
+    flex-direction: column;
+}
+
+.mp-review-author-name {
+    font-weight: 600;
+    color: var(--mp-gray-800);
+}
+
+.mp-review-date {
+    font-size: 14px;
+    color: var(--mp-gray-500);
+}
+
+.mp-review-rating {
+    color: #f59e0b;
+}
+
+.mp-review-title {
+    margin: 0 0 8px 0;
+    font-size: 16px;
+    font-weight: 600;
+    color: var(--mp-gray-800);
+}
+
+.mp-review-content {
+    margin: 0;
+    color: var(--mp-gray-600);
+    line-height: 1.7;
+}
+
+.mp-review-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 16px;
+    padding-top: 16px;
+    border-top: 1px solid var(--mp-gray-100);
+}
+
+.mp-btn-helpful {
+    background: none;
+    border: none;
+    color: var(--mp-gray-500);
+    cursor: pointer;
+    font-size: 14px;
+    padding: 8px 12px;
+    border-radius: var(--mp-radius);
+    transition: var(--mp-transition);
+}
+
+.mp-btn-helpful:hover {
+    background: var(--mp-gray-100);
+    color: var(--mp-primary);
+}
+
+.mp-review-footer a {
+    color: var(--mp-primary);
+    text-decoration: none;
+    font-size: 14px;
+}
+
+.mp-review-footer a:hover {
+    text-decoration: underline;
+}
+
+/* Business Response */
+.mp-business-response {
+    margin-top: 16px;
+    padding: 16px;
+    background: var(--mp-gray-50);
+    border-left: 4px solid var(--mp-primary);
+    border-radius: 0 var(--mp-radius) var(--mp-radius) 0;
+}
+
+.mp-business-response strong {
+    display: block;
+    color: var(--mp-primary);
+    margin-bottom: 8px;
+}
+
+.mp-business-response p {
+    margin: 0;
+    color: var(--mp-gray-700);
+}
+
+.mp-view-all-reviews {
+    display: block;
+    text-align: center;
+    padding: 16px;
+    margin-top: 16px;
+    background: var(--mp-gray-50);
+    color: var(--mp-primary);
+    text-decoration: none;
+    border-radius: var(--mp-radius);
+    font-weight: 600;
+    transition: var(--mp-transition);
+}
+
+.mp-view-all-reviews:hover {
+    background: var(--mp-primary);
+    color: white;
+}
+
+/* ============================================
+   Contact Information
+   ============================================ */
+.mp-business-contact {
+    margin-bottom: 32px;
+}
+
+.mp-business-contact h3 {
+    margin: 0 0 16px 0;
+    font-size: 20px;
+    color: var(--mp-gray-800);
+}
+
+.mp-contact-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 16px;
+}
+
+.mp-contact-item {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 12px;
+    background: var(--mp-gray-50);
+    border-radius: var(--mp-radius);
+}
+
+.mp-contact-item i {
+    width: 24px;
+    color: var(--mp-primary);
+}
+
+.mp-contact-item a {
+    color: var(--mp-primary);
+    text-decoration: none;
+}
+
+.mp-contact-item a:hover {
+    text-decoration: underline;
+}
+
+/* ============================================
+   Trust Badges
+   ============================================ */
+.mp-trust-badges {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+}
+
+.mp-trust-badge-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 10px 16px;
+    background: var(--mp-gray-100);
+    color: var(--mp-gray-700);
+    text-decoration: none;
+    border-radius: var(--mp-radius);
+    font-size: 14px;
+    font-weight: 500;
+    transition: var(--mp-transition);
+}
+
+.mp-trust-badge-link:hover {
+    background: var(--mp-gray-200);
+    color: var(--mp-gray-800);
+}
+
+.mp-trust-badge-link i {
+    color: var(--mp-success);
+}
+
+/* ============================================
+   Rating Display Component
+   ============================================ */
+.mp-rating-display {
+    text-align: center;
+    padding: 24px;
+    background: var(--mp-gray-50);
+    border-radius: var(--mp-radius-lg);
+}
+
+.mp-rating-large {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+}
+
+.mp-rating-number {
+    font-size: 48px;
+    font-weight: 700;
+    color: var(--mp-gray-900);
+}
+
+.mp-review-count-text {
+    color: var(--mp-gray-500);
+}
+
+/* ============================================
+   Rating Distribution Mini
+   ============================================ */
+.mp-rating-distribution-mini {
+    margin-top: 16px;
+    width: 100%;
+    max-width: 300px;
+}
+
+.mp-dist-row {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 4px;
+}
+
+.mp-dist-row span {
+    width: 16px;
+    font-size: 12px;
+    color: var(--mp-gray-500);
+}
+
+.mp-dist-row span:last-child {
+    width: 24px;
+    text-align: right;
+}
+
+.mp-dist-bar {
+    flex: 1;
+    height: 6px;
+    background: var(--mp-gray-200);
+    border-radius: 3px;
+    overflow: hidden;
+}
+
+.mp-dist-bar div {
+    height: 100%;
+    background: #f59e0b;
+}
+
+/* ============================================
+   Search Form
+   ============================================ */
+.mp-business-search form {
+    display: flex;
+    gap: 8px;
+}
+
+.mp-search-input {
+    flex: 1;
+    padding: 12px 16px;
+    border: 1px solid var(--mp-gray-300);
+    border-radius: var(--mp-radius);
+    font-size: 16px;
+}
+
+.mp-search-input:focus {
+    outline: none;
+    border-color: var(--mp-primary);
+    box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
+}
+
+.mp-search-btn {
+    padding: 12px 20px;
+    background: var(--mp-primary);
+    color: white;
+    border: none;
+    border-radius: var(--mp-radius);
+    cursor: pointer;
+    transition: var(--mp-transition);
+}
+
+.mp-search-btn:hover {
+    background: var(--mp-primary-dark);
+}
+
+/* ============================================
+   Categories
+   ============================================ */
+.mp-categories {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+}
+
+.mp-category-item {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 10px 16px;
+    background: var(--mp-gray-100);
+    color: var(--mp-gray-700);
+    text-decoration: none;
+    border-radius: var(--mp-radius);
+    font-weight: 500;
+    transition: var(--mp-transition);
+}
+
+.mp-category-item:hover {
+    background: var(--mp-primary);
+    color: white;
+}
+
+.mp-category-count {
+    color: var(--mp-gray-500);
+    font-size: 14px;
+}
+
+.mp-category-item:hover .mp-category-count {
+    color: rgba(255, 255, 255, 0.8);
+}
+
+/* ============================================
+   Loading State
+   ============================================ */
+.mp-loading {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 40px;
+}
+
+.mp-loading::after {
+    content: '';
+    width: 32px;
+    height: 32px;
+    border: 3px solid var(--mp-gray-200);
+    border-top-color: var(--mp-primary);
+    border-radius: 50%;
+    animation: mp-spin 0.8s linear infinite;
+}
+
+@keyframes mp-spin {
+    to { transform: rotate(360deg); }
+}
+
+/* ============================================
+   Responsive
+   ============================================ */
+@media (max-width: 768px) {
+    .mp-business-header {
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    .mp-business-logo {
+        margin: 0 auto;
+    }
+    
+    .mp-rating-summary {
+        justify-content: center;
+    }
+    
+    .mp-business-actions {
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+    
+    .mp-trust-banner {
+        flex-direction: column;
+        gap: 16px;
+        text-align: center;
+    }
+    
+    .mp-contact-grid {
+        grid-template-columns: 1fr;
+    }
+}

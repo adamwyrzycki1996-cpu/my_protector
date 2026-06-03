@@ -1,0 +1,505 @@
+/**
+ * MyProtector Platform - Dashboard Styles
+ * 
+ * Modern, responsive dashboard UI
+ * 
+ * @package MyProtector\Modules\Dashboards
+ */
+
+/* ============================================
+   CSS Variables
+   ============================================ */
+:root {
+    --mp-dash-primary: #2563eb;
+    --mp-dash-primary-dark: #1d4ed8;
+    --mp-dash-success: #10b981;
+    --mp-dash-warning: #f59e0b;
+    --mp-dash-danger: #ef4444;
+    --mp-dash-bg: #f3f4f6;
+    --mp-dash-sidebar-width: 260px;
+    --mp-dash-header-height: 64px;
+    --mp-dash-radius: 8px;
+    --mp-dash-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+    --mp-dash-shadow-lg: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* ============================================
+   Base Dashboard Layout
+   ============================================ */
+.mp-dashboard {
+    display: flex;
+    min-height: 100vh;
+    background: var(--mp-dash-bg);
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+}
+
+.mp-dashboard * {
+    box-sizing: border-box;
+}
+
+/* ============================================
+   Sidebar
+   ============================================ */
+.mp-dash-sidebar {
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: var(--mp-dash-sidebar-width);
+    height: 100vh;
+    background: #1f2937;
+    color: white;
+    overflow-y: auto;
+    z-index: 100;
+    transition: transform 0.3s ease;
+}
+
+.mp-dash-logo {
+    padding: 20px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.mp-dash-logo h1 {
+    margin: 0;
+    font-size: 20px;
+    font-weight: 700;
+}
+
+.mp-dash-nav {
+    padding: 20px 0;
+}
+
+.mp-dash-nav-section {
+    margin-bottom: 24px;
+}
+
+.mp-dash-nav-title {
+    padding: 8px 20px;
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: rgba(255, 255, 255, 0.5);
+}
+
+.mp-dash-nav-item {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 12px 20px;
+    color: rgba(255, 255, 255, 0.7);
+    text-decoration: none;
+    transition: all 0.2s;
+}
+
+.mp-dash-nav-item:hover {
+    background: rgba(255, 255, 255, 0.1);
+    color: white;
+}
+
+.mp-dash-nav-item.active {
+    background: var(--mp-dash-primary);
+    color: white;
+}
+
+.mp-dash-nav-item i {
+    width: 20px;
+    text-align: center;
+}
+
+/* ============================================
+   Main Content Area
+   ============================================ */
+.mp-dash-main {
+    flex: 1;
+    margin-left: var(--mp-dash-sidebar-width);
+    min-height: 100vh;
+}
+
+/* Header */
+.mp-dash-header {
+    position: sticky;
+    top: 0;
+    height: var(--mp-dash-header-height);
+    background: white;
+    border-bottom: 1px solid #e5e7eb;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 24px;
+    z-index: 50;
+}
+
+.mp-dash-breadcrumb {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 14px;
+    color: #6b7280;
+}
+
+.mp-dash-breadcrumb a {
+    color: var(--mp-dash-primary);
+    text-decoration: none;
+}
+
+.mp-dash-header-actions {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+
+.mp-dash-notifications {
+    position: relative;
+    cursor: pointer;
+}
+
+.mp-dash-notifications .badge {
+    position: absolute;
+    top: -4px;
+    right: -4px;
+    background: var(--mp-dash-danger);
+    color: white;
+    font-size: 10px;
+    padding: 2px 6px;
+    border-radius: 10px;
+}
+
+.mp-dash-user {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    cursor: pointer;
+}
+
+.mp-dash-avatar {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+/* Content */
+.mp-dash-content {
+    padding: 24px;
+}
+
+/* Page Title */
+.mp-dash-page-title {
+    margin: 0 0 24px 0;
+    font-size: 28px;
+    font-weight: 700;
+    color: #111827;
+}
+
+/* ============================================
+   Cards
+   ============================================ */
+.mp-dash-card {
+    background: white;
+    border-radius: var(--mp-dash-radius);
+    box-shadow: var(--mp-dash-shadow);
+    padding: 24px;
+    margin-bottom: 24px;
+}
+
+.mp-dash-card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 16px;
+}
+
+.mp-dash-card-title {
+    margin: 0;
+    font-size: 18px;
+    font-weight: 600;
+    color: #111827;
+}
+
+/* Stats Cards */
+.mp-dash-stats {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 24px;
+    margin-bottom: 24px;
+}
+
+.mp-dash-stat {
+    background: white;
+    border-radius: var(--mp-dash-radius);
+    padding: 20px;
+    box-shadow: var(--mp-dash-shadow);
+}
+
+.mp-dash-stat-label {
+    font-size: 14px;
+    color: #6b7280;
+    margin-bottom: 8px;
+}
+
+.mp-dash-stat-value {
+    font-size: 32px;
+    font-weight: 700;
+    color: #111827;
+}
+
+.mp-dash-stat-change {
+    font-size: 12px;
+    margin-top: 4px;
+}
+
+.mp-dash-stat-change.positive {
+    color: var(--mp-dash-success);
+}
+
+.mp-dash-stat-change.negative {
+    color: var(--mp-dash-danger);
+}
+
+/* ============================================
+   Tables
+   ============================================ */
+.mp-dash-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.mp-dash-table th,
+.mp-dash-table td {
+    padding: 12px 16px;
+    text-align: left;
+    border-bottom: 1px solid #e5e7eb;
+}
+
+.mp-dash-table th {
+    font-weight: 600;
+    color: #374151;
+    font-size: 14px;
+}
+
+.mp-dash-table tbody tr:hover {
+    background: #f9fafb;
+}
+
+/* ============================================
+   Forms
+   ============================================ */
+.mp-dash-form-group {
+    margin-bottom: 20px;
+}
+
+.mp-dash-label {
+    display: block;
+    font-weight: 500;
+    color: #374151;
+    margin-bottom: 8px;
+}
+
+.mp-dash-input,
+.mp-dash-select,
+.mp-dash-textarea {
+    width: 100%;
+    padding: 10px 14px;
+    border: 1px solid #d1d5db;
+    border-radius: 6px;
+    font-size: 14px;
+    transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.mp-dash-input:focus,
+.mp-dash-select:focus,
+.mp-dash-textarea:focus {
+    outline: none;
+    border-color: var(--mp-dash-primary);
+    box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
+}
+
+.mp-dash-textarea {
+    min-height: 120px;
+    resize: vertical;
+}
+
+/* Buttons */
+.mp-dash-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 6px;
+    font-size: 14px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.mp-dash-btn-primary {
+    background: var(--mp-dash-primary);
+    color: white;
+}
+
+.mp-dash-btn-primary:hover {
+    background: var(--mp-dash-primary-dark);
+}
+
+.mp-dash-btn-secondary {
+    background: #e5e7eb;
+    color: #374151;
+}
+
+.mp-dash-btn-secondary:hover {
+    background: #d1d5db;
+}
+
+.mp-dash-btn-success {
+    background: var(--mp-dash-success);
+    color: white;
+}
+
+.mp-dash-btn-danger {
+    background: var(--mp-dash-danger);
+    color: white;
+}
+
+/* ============================================
+   Tabs
+   ============================================ */
+.mp-dash-tabs {
+    display: flex;
+    border-bottom: 1px solid #e5e7eb;
+    margin-bottom: 24px;
+}
+
+.mp-dash-tab {
+    padding: 12px 24px;
+    color: #6b7280;
+    text-decoration: none;
+    border-bottom: 2px solid transparent;
+    transition: all 0.2s;
+}
+
+.mp-dash-tab:hover {
+    color: #374151;
+}
+
+.mp-dash-tab.active {
+    color: var(--mp-dash-primary);
+    border-bottom-color: var(--mp-dash-primary);
+}
+
+/* ============================================
+   Alerts
+   ============================================ */
+.mp-dash-alert {
+    padding: 16px;
+    border-radius: 6px;
+    margin-bottom: 16px;
+}
+
+.mp-dash-alert-success {
+    background: #d1fae5;
+    color: #065f46;
+}
+
+.mp-dash-alert-error {
+    background: #fee2e2;
+    color: #991b1b;
+}
+
+.mp-dash-alert-warning {
+    background: #fef3c7;
+    color: #92400e;
+}
+
+/* ============================================
+   Badges
+   ============================================ */
+.mp-dash-badge {
+    display: inline-block;
+    padding: 4px 10px;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: 500;
+}
+
+.mp-dash-badge-success {
+    background: #d1fae5;
+    color: #065f46;
+}
+
+.mp-dash-badge-warning {
+    background: #fef3c7;
+    color: #92400e;
+}
+
+.mp-dash-badge-danger {
+    background: #fee2e2;
+    color: #991b1b;
+}
+
+/* ============================================
+   Trust Status
+   ============================================ */
+.mp-dash-trust {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 20px;
+    border-radius: var(--mp-dash-radius);
+    margin-bottom: 24px;
+}
+
+.mp-dash-trust-walking {
+    background: linear-gradient(135deg, #d1fae5, #a7f3d0);
+}
+
+.mp-dash-trust-shopping {
+    background: linear-gradient(135deg, #fef3c7, #fde68a);
+}
+
+.mp-dash-trust-bad {
+    background: linear-gradient(135deg, #fee2e2, #fecaca);
+}
+
+.mp-dash-trust-icon {
+    font-size: 40px;
+}
+
+.mp-dash-trust-info h3 {
+    margin: 0 0 4px 0;
+    font-size: 20px;
+}
+
+.mp-dash-trust-info p {
+    margin: 0;
+    color: #374151;
+}
+
+/* ============================================
+   Responsive
+   ============================================ */
+@media (max-width: 768px) {
+    .mp-dash-sidebar {
+        transform: translateX(-100%);
+    }
+    
+    .mp-dash-sidebar.open {
+        transform: translateX(0);
+    }
+    
+    .mp-dash-main {
+        margin-left: 0;
+    }
+    
+    .mp-dash-stats {
+        grid-template-columns: 1fr;
+    }
+    
+    .mp-dash-header {
+        padding: 0 16px;
+    }
+    
+    .mp-dash-content {
+        padding: 16px;
+    }
+}
