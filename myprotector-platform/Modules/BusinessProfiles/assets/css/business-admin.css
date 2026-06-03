@@ -1,0 +1,257 @@
+/**
+ * MyProtector Platform - Business Admin Styles
+ * 
+ * Admin-specific styles for business profile management
+ * 
+ * @package MyProtector\Modules\BusinessProfiles
+ */
+
+/* ==================== General Admin Styles ==================== */
+
+.mp-admin-wrap {
+    max-width: 1400px;
+}
+
+.mp-admin-wrap h1 {
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+/* ==================== Stats Cards ==================== */
+
+.mp-stats-cards {
+    display: flex;
+    gap: 20px;
+    margin-bottom: 20px;
+    flex-wrap: wrap;
+}
+
+.mp-stat-card {
+    background: #fff;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    padding: 15px 20px;
+    min-width: 120px;
+    text-align: center;
+}
+
+.mp-stat-card h3 {
+    margin: 0 0 5px;
+    font-size: 13px;
+    color: #646970;
+    text-transform: uppercase;
+}
+
+.mp-stat-number {
+    margin: 0;
+    font-size: 28px;
+    font-weight: 600;
+    color: #1d2327;
+}
+
+.mp-stat-pending .mp-stat-number {
+    color: #d63638;
+}
+
+.mp-stat-approved .mp-stat-number {
+    color: #00a32a;
+}
+
+/* ==================== Table Styles ==================== */
+
+.mp-businesses-table {
+    margin-top: 20px;
+}
+
+.mp-logo-placeholder {
+    width: 50px;
+    height: 50px;
+    background: #f0f0f1;
+    border-radius: 4px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 20px;
+    font-weight: 600;
+    color: #646970;
+}
+
+.mp-empty-row td {
+    text-align: center;
+    padding: 40px !important;
+    color: #646970;
+}
+
+/* ==================== Status Badges ==================== */
+
+.mp-status-badge {
+    display: inline-block;
+    padding: 4px 10px;
+    border-radius: 12px;
+    font-size: 12px;
+    font-weight: 500;
+}
+
+.mp-status-pending {
+    background: #fff;
+    color: #d63638;
+    border: 1px solid #d63638;
+}
+
+.mp-status-approved {
+    background: #00a32a;
+    color: #fff;
+}
+
+.mp-status-rejected {
+    background: #d63638;
+    color: #fff;
+}
+
+.mp-status-suspended {
+    background: #646970;
+    color: #fff;
+}
+
+/* ==================== URL Meta Box ==================== */
+
+.mp-url-item {
+    padding: 10px;
+    margin: 5px 0;
+    background: #f6f7f7;
+    border-radius: 4px;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 8px;
+}
+
+.mp-url-item strong {
+    min-width: 120px;
+}
+
+.mp-url-item a {
+    word-break: break-all;
+}
+
+.mp-not-set {
+    color: #a7aaad;
+    font-style: italic;
+}
+
+.mp-status-met {
+    border-left: 3px solid #00a32a;
+}
+
+.mp-status-unmet {
+    border-left: 3px solid #d63638;
+}
+
+.mp-status-indicator {
+    margin-left: auto;
+    font-weight: bold;
+}
+
+.mp-trust-progress {
+    margin-top: 15px;
+    padding-top: 15px;
+    border-top: 1px solid #e0e0e0;
+}
+
+.mp-trust-progress label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 600;
+}
+
+.mp-progress-bar {
+    height: 8px;
+    background: #e0e0e0;
+    border-radius: 4px;
+    overflow: hidden;
+}
+
+.mp-progress-fill {
+    height: 100%;
+    background: linear-gradient(90deg, #00a32a, #00d70a);
+    transition: width 0.3s ease;
+}
+
+/* ==================== Approval Meta Box ==================== */
+
+.mp-approval-section {
+    padding: 10px 0;
+}
+
+.mp-approval-section select {
+    width: 100%;
+    margin-top: 5px;
+}
+
+.mp-rejection-reason {
+    background: #f6f7f7;
+    padding: 10px;
+    border-radius: 4px;
+    margin: 10px 0;
+}
+
+.mp-rejection-reason p {
+    margin: 5px 0 0;
+}
+
+.mp-quick-actions {
+    margin-top: 15px;
+    padding-top: 15px;
+    border-top: 1px solid #e0e0e0;
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+}
+
+/* ==================== Alerts ==================== */
+
+.mp-alert {
+    padding: 12px 15px;
+    border-radius: 4px;
+    margin: 15px 0;
+}
+
+.mp-alert-info {
+    background: #e7f5ff;
+    border-left: 4px solid #2271b1;
+    color: #0c63e4;
+}
+
+/* ==================== Form Styles ==================== */
+
+.mp-form-section {
+    background: #fff;
+    padding: 20px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.mp-form-section h2,
+.mp-form-section h3 {
+    margin-top: 0;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #e0e0e0;
+}
+
+/* ==================== Responsive ==================== */
+
+@media (max-width: 782px) {
+    .mp-stats-cards {
+        flex-direction: column;
+    }
+    
+    .mp-stat-card {
+        min-width: 100%;
+    }
+    
+    .mp-businesses-table th:first-child,
+    .mp-businesses-table td:first-child {
+        display: none;
+    }
+}
